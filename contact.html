@@ -3,9 +3,10 @@
 <h2 id="enquiry-form">Send us your enquiry.</h2>
 <p class="muted">Tell us a little about your business. No email app is needed. The form is processed by FormSubmit.co, a third-party service.</p>
 <form action="https://formsubmit.co/quickpartcad@gmail.com" class="enquiry-form" method="POST" enctype="multipart/form-data" name="website-enquiry">
-<input name="_subject" type="hidden" value="QuickPartCAD Web — new website enquiry"/>
+<input name="_subject" type="hidden" value="QuickPartCAD | New CAD quote request"/>
 <input name="_template" type="hidden" value="table"/>
-<div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty<input name="_honey" tabindex="-1" autocomplete="off"/></label></div>
+<input type="hidden" name="request_type" value="QuickPartCAD Web website enquiry"/>
+<input aria-hidden="true" autocomplete="off" name="_honey" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
 
 <div class="form-grid"><label>Your name <input autocomplete="name" maxlength="120" name="name" required="" type="text"/></label>
 <label>Email address <input autocomplete="email" maxlength="254" name="email" required="" type="email"/></label></div>
@@ -14,7 +15,7 @@
 <option value="Starter Website ($99)">Starter Website — $99</option>
 <option value="Search-Ready Website ($149)">Search-Ready Website — $149</option>
 <option value="Not sure yet">Not sure yet</option></select></label>
-<label>What do you need? <textarea maxlength="3000" name="message" placeholder="Your services, location, pages you need, and anything else we should know…" required="" rows="5"></textarea></label>
+<label>What do you need? <textarea maxlength="3000" name="project_description" placeholder="Your services, location, pages you need, and anything else we should know…" required="" rows="5"></textarea></label>
 <label>Attach a file (optional) <input type="file" name="attachment" id="enquiry-attachment" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt,.doc,.docx,.zip" aria-describedby="attachment-note"/></label>
 <p class="small-print" id="attachment-note">Optional: a logo, design reference, brief, or document (PDF, image, DOCX, TXT, or ZIP). Maximum 10 MB. Do not upload confidential information.</p>
 <p class="small-print">We use the details you send to respond to your enquiry. Form submissions are processed by FormSubmit.co and forwarded to our email address. Please don't include payment information or sensitive personal data. Domain, hosting and publication are separate; indexing is not guaranteed.</p>
