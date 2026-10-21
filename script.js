@@ -7,3 +7,25 @@ if(enquiryForm){
  if(params.get('package')==='search-ready') choice.value='Search-Ready Website ($149)';
  if(params.get('package')==='starter') choice.value='Starter Website ($99)';
 }
+
+// FormSubmit supports native multipart POST; only block files above its 10 MB limit.
+if(enquiryForm){
+ const attachment=enquiryForm.querySelector('#enquiry-attachment');
+ const status=enquiryForm.querySelector('#enquiry-status');
+ const maxBytes=10*1024*1024;
+ const validateAttachment=()=>{
+   const file=attachment?.files?.[0];
+   if(file && file.size>maxBytes){
+     attachment.setCustomValidity('File exceeds 10 MB. Please choose a smaller file.');
+     if(status) status.textContent='Attachment is too large (maximum 10 MB).';
+     return false;
+   }
+   attachment?.setCustomValidity('');
+   if(status) status.textContent='';
+   return true;
+ };
+ attachment?.addEventListener('change',validateAttachment);
+ enquiryForm.addEventListener('submit',event=>{
+   if(!validateAttachment()){event.preventDefault();attachment.reportValidity();}
+ });
+}
